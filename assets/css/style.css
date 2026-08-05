@@ -1,0 +1,141 @@
+:root {
+  --blue: #245b8f;
+  --blue-deep: #1f4f7e;
+  --blue-dark: #173f67;
+  --ink: #4c4c4c;
+  --muted: #7b7f84;
+  --line: #d6dde4;
+  --soft: #f6f8fa;
+  --paper: #ffffff;
+  --max: 1120px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", "Times New Roman", serif;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+}
+a { color: var(--blue-dark); }
+a:hover { color: var(--blue); }
+img { max-width: 100%; height: auto; }
+.container { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+
+.site-header {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #2b659d 0%, #245b8f 48%, #1f4f7e 100%);
+  color: #d6d9dd;
+}
+.site-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/east-asia-map.svg") left center / auto 100% no-repeat;
+  opacity: 0.75;
+  pointer-events: none;
+}
+.header-inner { position: relative; padding: 24px 0 42px; text-align: center; }
+.language-switch { text-align: right; font-family: Georgia, "Times New Roman", serif; font-size: 15px; }
+.language-switch a { color: #d9dde2; text-decoration: none; padding: 4px 6px; }
+.language-switch a[aria-current="page"] { border-bottom: 1px solid #eef1f4; color: #fff; }
+.site-title { margin: 30px 0 4px; color: #d7d9dc; font-size: clamp(34px, 5vw, 56px); font-weight: 400; letter-spacing: 0.14em; line-height: 1.25; }
+.site-subtitle { margin: 0; color: #c7ccd2; font-family: Georgia, "Times New Roman", serif; font-size: clamp(17px, 2vw, 23px); letter-spacing: 0.03em; }
+
+.main-nav { background: #fff; border-bottom: 1px solid var(--line); }
+.main-nav .container { display: flex; justify-content: center; gap: 0; }
+.main-nav a {
+  position: relative;
+  display: block;
+  min-width: 220px;
+  padding: 17px 34px 15px;
+  text-align: center;
+  color: var(--blue-dark);
+  font-size: 19px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.main-nav a + a::before { content: ""; position: absolute; left: 0; top: 19px; bottom: 19px; width: 1px; background: #cdd5dd; }
+.main-nav a[aria-current="page"]::after { content: ""; position: absolute; left: 22%; right: 22%; bottom: -1px; height: 3px; background: var(--blue-dark); }
+
+main { padding: 52px 0 64px; }
+.section { padding: 0 0 34px; margin-bottom: 34px; border-bottom: 1px solid var(--line); }
+.section:last-child { border-bottom: 0; }
+.section-title {
+  margin: 0 0 20px;
+  padding-left: 16px;
+  border-left: 5px solid var(--blue);
+  color: var(--blue-dark);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+.motto { margin: 0 0 2px 31px; color: var(--ink); font-size: 17px; }
+.prose p { margin: 0 0 1.15em; }
+
+.president-layout { display: grid; grid-template-columns: minmax(0, 1fr) 190px; gap: 46px; align-items: start; }
+.president-photo { padding-top: 4px; text-align: center; }
+.president-photo img { width: 142px; aspect-ratio: 1 / 1.18; object-fit: cover; object-position: center top; border: 1px solid #e0e4e8; }
+.president-caption { margin-top: 14px; color: #555; line-height: 1.75; font-size: 15px; }
+.president-name { display: block; margin-top: 5px; color: #30363b; font-size: 22px; letter-spacing: 0.12em; }
+
+.two-column { display: grid; grid-template-columns: 1fr 1fr; gap: 46px; }
+.summary-box { min-width: 0; }
+.button-link {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 7px 20px;
+  border: 1px solid var(--blue);
+  color: var(--blue-dark);
+  text-decoration: none;
+  font-size: 15px;
+}
+.button-link:hover { background: var(--blue); color: #fff; }
+
+.event-card, .journal-card { display: grid; grid-template-columns: 260px minmax(0,1fr); gap: 38px; align-items: start; }
+.preview-frame { background: var(--soft); padding: 16px; border: 1px solid var(--line); }
+.preview-frame img { display: block; margin: 0 auto; max-height: 430px; object-fit: contain; }
+.meta-list { margin: 0; padding: 0; list-style: none; }
+.meta-list li { padding: 6px 0; border-bottom: 1px dotted #cfd5db; }
+.meta-list strong { display: inline-block; min-width: 7.5em; color: var(--blue-dark); }
+.downloads { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+.contents-list { padding-left: 1.3em; }
+.contents-list li { margin-bottom: 10px; }
+.article-block { margin-top: 32px; padding-top: 28px; border-top: 1px solid var(--line); }
+.article-block h3 { color: var(--blue-dark); font-size: 22px; margin: 0 0 16px; }
+.article-block .credit { text-align: right; }
+
+.site-footer { border-top: 1px solid var(--line); padding: 25px 0 28px; text-align: center; color: #686d72; font-size: 14px; }
+.site-footer strong { display: block; color: var(--blue-dark); font-size: 18px; margin-bottom: 3px; }
+
+.notice { padding: 26px; background: var(--soft); border-left: 4px solid var(--blue); }
+
+@media (max-width: 780px) {
+  .container { width: min(100% - 30px, var(--max)); }
+  .header-inner { padding-bottom: 32px; }
+  .language-switch { text-align: center; }
+  .site-title { margin-top: 24px; letter-spacing: 0.08em; }
+  .main-nav .container { flex-wrap: wrap; }
+  .main-nav a { min-width: 33.333%; padding: 14px 10px; font-size: 16px; }
+  .main-nav a + a::before { top: 16px; bottom: 16px; }
+  main { padding-top: 36px; }
+  .president-layout, .two-column, .event-card, .journal-card { grid-template-columns: 1fr; }
+  .president-photo { order: -1; }
+  .president-layout { gap: 24px; }
+  .event-card, .journal-card { gap: 24px; }
+  .preview-frame img { max-height: 520px; }
+}
+
+@media (max-width: 480px) {
+  body { line-height: 1.8; }
+  .main-nav a { min-width: 100%; border-bottom: 1px solid #eef1f4; }
+  .main-nav a + a::before { display: none; }
+  .section-title { font-size: 23px; }
+  .motto { margin-left: 21px; }
+  .meta-list strong { display: block; }
+}
